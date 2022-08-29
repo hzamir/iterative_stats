@@ -64,7 +64,9 @@ class RunningStatsCalculator {
             const newDSquared = this._dSquared + dSquaredIncrement
 
             this._mean = newMean
-            this._dSquared = newDSquared
+           
+            this._dSquared = (Math.abs(newDSquared) < 0.000_000_000_001)? 0: newDSquared
+            
         }
     }
 
